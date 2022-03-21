@@ -1,0 +1,66 @@
+﻿
+@{
+    Layout = "~/Areas/Admin/Shared/_Layout.cshtml";
+}
+@{ 
+    var text= ViewBag.ExamData;
+    var _title = ViewBag.Title;
+}
+
+
+<form class="form-card" asp-controller="Exam" asp-action="CreateExam" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="Title" value="@_title" />
+    <input type="hidden" name="Text" value="@text" />
+    <div class="alert alert-primary text-center" role="alert">
+        @_title
+    </div>
+    <div class="alert alert-primary" role="alert">
+        @text
+    </div>
+    <h3 class="text-center">QUESTIONS</h3>
+    @for (int i = 1; i < 5; i++)
+    {
+        <div id="question_@i">
+            <div class="form-group">
+                <input type="text" name="Question_@i" class="form-control" placeholder="Question @i" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="text" name="Answer1_@i" class="form-control" placeholder="A)" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text" name="Answer2_@i" class="form-control" placeholder="B)" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text" name="Answer3_@i" class="form-control" placeholder="C)" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text" name="Answer4_@i" class="form-control" placeholder="D)" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+
+                </div>
+                <div class="form-group col-md-6">
+                    <select name="CorrectAnswer_@i" class="form-control" required>
+                        <option value="0">Select Correct Answer</option>
+                        <option value="1">A</option>
+                        <option value="2">B</option>
+                        <option value="3">C</option>
+                        <option value="4">D</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+
+                </div>
+            </div>
+        </div>
+    }
+    <div class="row" style="text-align:center!important">
+        <button type="submit" style="text-align:center" class="btn btn-info btn-lg btn-block">Save The Exam</button>
+    </div>
+
+
+</form>
+

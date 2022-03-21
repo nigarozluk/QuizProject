@@ -1,0 +1,69 @@
+﻿@{
+
+    Layout = "~/Shared/_Layout.cshtml";
+}
+
+@model Project.DAL.Entity.UserExam
+<p>@ViewBag.text</p>
+<form id="ScoreForm">
+    <input type="hidden"  name="ExamID" value="@Model.ExamID"/>
+    <div class="alert alert-primary text-center" role="alert">
+        @Model.Exam.Text.TextTitle
+    </div>
+    <div class="alert alert-primary" role="alert">
+        @Model.Exam.Text.TextContent
+    </div>
+    <h3 class="text-center">QUESTIONS</h3>
+    @foreach (var question in Model.Exam.Text.Questions)
+    {
+        <div id="question">
+            <div class="form-group">
+                <input type="text" value="@question.QuestionText" class="form-control" disabled>
+            </div>
+            @foreach (var option in question.Options)
+            {
+                <div class="form-check col-6">
+                    <input class="form-check-input" type="radio" name="question_@question.ID"  value="@option.ID">
+                    <label class="form-check-label" id="@option.ID" for="exampleRadios1">
+                        @option.OptionText
+                    </label>
+                </div>
+            }
+
+        </div>
+    }
+
+
+    <br />
+
+    <div class="form-row" style="text-align:center!important">
+        <button type="button" style="text-align:center" onclick="CalculateTheScore()" class="btn btn-info btn-lg btn-block text-center">Calculate The Score</button>
+    </div>
+</form>
+@section Scripts{
+    <script>
+        function CalculateTheScore() {
+            var dataFrom = new FormData();
+            var requestDAta = $('#ScoreForm').serialize();
+            $.ajax({
+                url: `/Home/CalculateScore?${requestDAta}`,
+                type: 'POST',
+                data: dataFrom,
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function (resp) {
+                    if (!resp.hasError) {
+                        var datalist = resp.data;
+                        for (var i = 1; i < datalist.length; i++) {
+                            $(`#${datalist[i]}`).css('background-color', 'greenyellow');
+                        }
+                        alert("Your Score: " + datalist[0]);
+                    } else {
+                        alert(resp.message);
+                    }
+                }
+            });
+        }
+    </script>
+}

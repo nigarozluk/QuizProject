@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Shared/_Layout.cshtml";
+}
+
+@{ var tempMessage = TempData["Message"] ?? ""; }
+<h3 class="text-muted text-center">Select A Title For Exam</h3>
+<h6 style="color:red">@tempMessage</h6>
+<form>
+    @foreach (var item in ViewBag.Data)
+    {
+    <div style="cursor:pointer" onclick="GetSelectedTitle('@item.Link','@item.Title')" class="alert alert-primary" role="alert">
+        @item.Title
+    </div>
+
+       
+    }
+</form>
+
+
+
+
+
+@section Scripts{
+    <script>
+        function GetSelectedTitle(link, title) {
+            window.location = `/Admin/Exam/GetContent?link=${link}&title=${title}`
+        }
+    </script>
+}

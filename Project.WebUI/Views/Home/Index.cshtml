@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    .wrapper {
+        text-align: center;
+    }
+
+    .button {
+        position: absolute;
+        top: 50%;
+    }
+</style>
+@{
+    var text = ViewBag.ThereIsExam;
+    var score = ViewBag.Score;
+}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        @{
+            if (text == 1)
+            {
+                <form asp-controller="Home" asp-action="Exam" method="post" enctype="multipart/form-data">
+                    <h1 class="display-4 text-center">You Have Exam!</h1>
+                    <p class="lead text-center">There is an exam assigned to you. You can start the exam with Start button.</p>
+                    <div class="wrapper">
+                        <button type="submit" oncl class="btn btn-primary btn-lg">Start</button>
+                    </div>
+                </form>
+            }
+            else
+            {
+                <h1 class="display-4 text-center">You Have Not Exam!</h1>
+                <p class="lead text-center">Currently,there is not an exam assigned to you. If there is an exam assigned to you, the start button will be active.</p>
+                <div class="wrapper">
+                    <button type="button" class="btn btn-primary btn-lg" disabled> Start</button>
+                </div>
+            }
+        }
+
+
+    </div>
+</div>
+
