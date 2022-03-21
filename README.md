@@ -1,9 +1,9 @@
 # QuizProject
-getting last 5 data from wired.com, and creating an exam about selected data. (.net, agilepack, javascript , sqlite))
+# Getting last 5 data from wired.com, and creating an exam about selected data. (.net, agilepack, javascript , sqlite))
 <br/>
 <br/>
 <br/>
-**For Admin Panel password=123456 **
+***For Admin Panel password=123456 ***
 <br/>
 <br/>
 <img src="ReadMeImages/1.PNG">
