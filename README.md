@@ -1,5 +1,5 @@
 # QuizProject
-# Getting last 5 data from wired.com, and creating an exam about selected data. (.net, agilepack, javascript , sqlite))
+# Getting last 5 data from wired.com, and creating an exam about selected data. (.net, agilepack, javascript , sqlite)
 <br/>
 <br/>
 <br/>
