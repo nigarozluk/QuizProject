@@ -1,8 +1,10 @@
 # QuizProject
-# Getting last 5 data from wired.com, and creating an exam about selected data.(.net, agilepack, javascript , sqlite)
+ ***Getting last 5 data from wired.com, and creating an exam about selected data.(.net, agilepack, javascript , sqlite***
 <br/>
 <br/>
-***For Admin Panel password=123456 ***
+<br/>
+<br/>
+***For Admin Panel password=123456***
 <br/>
 <br/>
 <img src="ReadMeImages/1.PNG">
@@ -10,7 +12,7 @@
 <br/>
 <br/>
 <br/>
-**Topics from wired.com (last 5) **
+**Topics from wired.com (last 5)**
 <br/>
 <br/>
 <img src="ReadMeImages/2.PNG">
@@ -18,7 +20,7 @@
 <br/>
 <br/>
 <br/>
-**Selected Topic and it's content, you create 4 questions and options about text. **
+**Selected Topic and it's content, you create 4 questions and options about text.**
 <br/>
 <br/>
 <img src="ReadMeImages/3.PNG">
@@ -26,7 +28,7 @@
 <br/>
 <br/>
 <br/>
-**questions,options,correct answer... **
+**questions,options,correct answer...**
 <br/>
 <br/>
 <img src="ReadMeImages/4.PNG">
@@ -50,7 +52,7 @@
 <br/>
 <br/>
 <br/>
-**For User Panel password=123456 **
+**For User Panel password=123456**
 <br/>
 <br/>
 <img src="ReadMeImages/7.PNG">
